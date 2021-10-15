@@ -1,0 +1,60 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/colors';
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
+    @include desktop {
+        width: auto;
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: colors.$ink-1;
+        font: $mBodyLarge;
+        padding: $padding*0.5;
+        width: 68px;
+        height: 68px;
+        border-radius: $border-radius*2;
+
+        &--active {
+            background-color: colors.$ink-4;
+        }
+
+        @include tablet {
+            flex-direction: row;
+            width: auto;
+            height: auto;
+            padding: $padding*0.5 $padding;
+        }
+
+        @include desktop {
+            margin-left: $margin;
+        }
+    }
+
+    &__icon {
+        margin-bottom: $margin*0.25;
+
+        @include tablet {
+            margin-bottom: 0;
+            margin-right: $margin*0.5;
+        }
+
+        &-container {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__text {
+
+    }
+}
